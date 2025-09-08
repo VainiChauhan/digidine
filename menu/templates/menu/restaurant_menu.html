@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <title>{{ restaurant.name }} Menu</title> 
+</head> 
+<body> 
+    <h1>{{ restaurant.name }} Menu</h1> 
+    <ul> 
+        {% for item in menu_items %} 
+            <li> 
+                <strong>{{ item.name }}</strong>: {{ item.description }} - ${{ item.price }} 
+                {% if item.availability %}  
+                    (Available) 
+                {% else %} 
+                    (Out of stock) 
+                {% endif %} 
+            </li> 
+        {% endfor %} 
+    </ul> 
+</body> 
+</html> 
