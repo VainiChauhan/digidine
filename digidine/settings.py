@@ -80,10 +80,17 @@ HOST = os.getenv("SECRET_KEY")
 DATABASES = {
      'default': {
         'ENGINE': 'djongo',
-        'NAME': 'Cluster0',
-        'CLIENT': {
-            'host': HOST ##'mongodb+srv://vainichauhan:qZqjj5BBaDfSZAqz@cluster0.dgjoc.mongodb.net/'
-        }
+        'NAME': 'digidine_db',
+        'ENFORCE_SCHEMA': False,
+        'HOST': '127.0.0.1',
+        'PORT': 27017,
+
+        #  'CLIENT': {
+        #     'host': 'mongodb://127.0.0.1:27017',
+        # }
+        # 'CLIENT': {
+        #     'host': HOST ##'mongodb+srv://vainichauhan:qZqjj5BBaDfSZAqz@cluster0.dgjoc.mongodb.net/'
+        # }
     }
 }
 
