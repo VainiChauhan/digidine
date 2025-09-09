@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+load_dotenv() 
 # Application definition
 
 INSTALLED_APPS = [
@@ -74,12 +75,14 @@ WSGI_APPLICATION = 'digidine.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+HOST = os.getenv("SECRET_KEY")
+
 DATABASES = {
      'default': {
         'ENGINE': 'djongo',
         'NAME': 'Cluster0',
         'CLIENT': {
-            'host': 'mongodb+srv://vainichauhan:qZqjj5BBaDfSZAqz@cluster0.dgjoc.mongodb.net/'
+            'host': HOST ##'mongodb+srv://vainichauhan:qZqjj5BBaDfSZAqz@cluster0.dgjoc.mongodb.net/'
         }
     }
 }
